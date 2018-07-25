@@ -1,0 +1,15 @@
+{% extends "navbar.html" %}
+  {% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Update Asset Price</h1>
+                 <form method="GET" action="./Update_Asset_Price" >
+                     <input type="text" placeholder="Asset Symbol" name="symbol" required />
+                     <button type="submit" class="btn btn-primary" value="Update">Update</button>
+                </form>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

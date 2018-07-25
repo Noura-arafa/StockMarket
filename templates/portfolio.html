@@ -1,0 +1,44 @@
+{% extends "navbar.html" %}
+  {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% if totalamount %}
+                <h4>Portfolio with Total amount  {{ totalamount }}</h4>
+                <div class="table-responsive">
+                    <table  class="table table-bordred table-striped">
+                        <thead>
+                           <th>Portfolio ID</th>
+                            <th>Asset Name</th>
+                             <th>Ticker</th>
+                             <th>Daily Price</th>
+                             <th>Current amount</th>
+                             <th>Stocks</th>
+                             <th>Amount of investment</th>
+                             <th>Reminder</th>
+                       </thead>
+                        <tbody>
+                               {% for i in  range(invests|length) %}
+                                 <tr>
+                                     <td>{{ invests[i].portfolio_id}}</td>
+                                     <td>{{ assets[i][1]}}</td>
+                                     <td> {{ assets[i][2]}} </td>
+                                     <td>{{ assets[i][3]}}</td>
+                                     <td>{{ invests[i].currentCredit}}</td>
+                                     <td>{{ invests[i].stocks}}</td>
+                                     <td>{{ invests[i].investmentAmount}}</td>
+                                     <td>{{ invests[i].reminder}}</td>
+
+                                 </tr>
+                               {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                    <h1>No Portfolio with that ID</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

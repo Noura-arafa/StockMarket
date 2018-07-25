@@ -1,0 +1,27 @@
+{% extends "navbar.html" %}
+  {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h4>My Portfolios Click on ID number To Go to view Portfolio </h4>
+
+                <div class="table-responsive">
+                    <table  class="table table-bordred table-striped">
+                        <thead>
+                           <th>Portfolio ID</th>
+                            <th>Number of Assets</th>
+                       </thead>
+                        <tbody>
+                               {% for portf in  portfolios %}
+                                 <tr onClick='document.location.href="{{url_for("get_portfolio", portfolio_id=portf.id) }}" ;'>
+                                     <td >{{ portf.id}}</td>
+                                     <td>{{ portf.numAssets}}</td>
+                                 </tr>
+                               {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

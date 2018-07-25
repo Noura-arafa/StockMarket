@@ -1,0 +1,23 @@
+{% extends "navbar.html" %}
+  {% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Create Account</h1>
+                 <form method="POST" action="./user" >
+                 <input type="text" placeholder="FirstName" name="firstName" required />
+                 <br><br>
+                 <input type="text" placeholder="LastName" name="lastName" required />
+                 <br><br>
+                 <input type="text" placeholder="username" name="username" required />
+                 <br><br>
+                 <input type="text" placeholder="email" name="email" required />
+                 <br><br>
+                 <input type="text" placeholder="password" name="password" required />
+                 <br><br>
+                 <button type="submit" class="btn btn-primary" value="Add">Submit</button>
+  </form>
+            </div>
+        </div>
+</div>
+{% endblock %}

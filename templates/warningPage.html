@@ -1,0 +1,24 @@
+{% extends "navbar.html" %}
+{% block content %}
+<div class="container">
+    {% if title=='asset' %}
+        <h1>Their is Asset with that name Enter another name </h1>
+    {% elif title== 'user' %}
+        <h1>User Name is incorrect please try again</h1>
+    {% elif title== 'userexist' %}
+        <h1>User Name is already token please try another one</h1>
+    {% elif title== 'email' %}
+        <h1>email is already exist </h1>
+    {% elif title== 'welcome' %}
+        <h1>Welcome {{name}}</h1>
+    {% elif title == 'NotAsset' %}
+        <h1>Asset Name is incorrect please try agan</h1>
+    {% elif title == 'symbol' %}
+        <h1>Asset Symbol is incorrect please try agan</h1>
+    {% elif title == 'NoAmount' %}
+        <h1>You didn't enter the amount please try again </h1>
+    {% elif title == 'nouserportf' %}
+        <h1>You have no Portfolis Go and Create one </h1>
+    {% endif %}
+    </div>
+{% endblock %}

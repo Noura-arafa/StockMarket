@@ -1,0 +1,17 @@
+{% extends "navbar.html" %}
+  {% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Add Asset</h1>
+                 <form method="POST" action="./addAsset" >
+                 <input type="text" placeholder="Asset Name" name="assetName" required /><br><br>
+                 <input type="text" placeholder="Ticker" name="ticker" required /><br><br>
+                 <input type="text" placeholder="price per stock" name="dailyPrice" required /><br><br>
+                 <button type="submit" class="btn btn-primary" value="Add">Add</button>
+  </form>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "navbar.html" %}
+  {% block content %}
+<form method="post", action="./createPortfolio">
+        <div class="col-xs-12">
+            <div class="col-md-12" >
+                <h3> Create Portfolio</h3>
+                <div id="field">
+                <div id="field0">
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="userName">User Name</label>
+                  <div class="col-md-5">
+                  <input id="userName" name="userName" type="text" placeholder="userName" class="form-control input-md" required />
+
+                  </div>
+                </div>
+                <br><br>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="asset">Asset Name</label>
+                  <div class="col-md-5">
+                  <input id="asset" name="assetname" type="text" placeholder="Asset Name" class="form-control input-md" required />
+
+                  </div>
+                </div>
+                <br><br>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="amount">Amount of Money</label>
+                  <div class="col-md-5">
+                  <input id="amount" name="amount" type="text" placeholder="Amount of Money" class="form-control input-md" required />
+                  </div>
+                </div>
+                <br><br>
+
+                </div>
+                </div>
+                <!-- Button -->
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <button id="add-more" name="add-more" class="btn btn-primary">Add More</button>
+                  </div>
+                </div>
+                <br><br>
+
+                <div class="form-group">
+                         <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary" value="Add">Add</button>
+                        </div>
+                </div>
+        </div>
+
+    </div>
+
+
+</form>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+    //@naresh action dynamic childs
+    var next = 0;
+    $("#add-more").click(function(e){
+        e.preventDefault();
+        var addto = "#field" + next;
+        var addRemove = "#field" + (next);
+        next = next + 1;
+        var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class="form-group"> <label class="col-md-4 control-label" for="asset">Asset Name</label> <div class="col-md-5"> <input id="asset" name="assetname" type="text" placeholder="Asset Name" class="form-control input-md" required /> </div></div><br><br> <!-- Text input--><div class="form-group"> <label class="col-md-4 control-label" for="amount">Amount of Money</label> <div class="col-md-5"> <input id="amount" name="amount" type="text" placeholder="Amount of Money" class="form-control input-md" required /> </div></div><br><br>';
+        var newInput = $(newIn);
+        $(addto).after(newInput);
+
+        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+        $("#count").val(next);
+    });
+
+});
+</script>
+{% endblock %}
